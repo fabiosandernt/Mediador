@@ -30,7 +30,7 @@ namespace Mediador.Domain.Contrato
         }
 
         // Sobrecarga do construtor para permitir que o VO de endereço seja fornecido separadamente
-        public Cliente(string nome, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, 
+        public Cliente(string nome, string logradouro, string numero, string complemento, string bairro, string cidade, Estado estado, 
             string cep, string telefone, Email email, Password password, TipoPlanoEnum plano, TipoDocumentoEnum documento, Guid userId, User user)
             
             : this(nome, Endereco.Create(logradouro, numero, complemento, bairro, cidade, estado, cep), telefone, email, password, plano, documento, userId, user)
