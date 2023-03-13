@@ -1,15 +1,12 @@
-﻿using Mediador.Domain.ValueObject;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mediador.Domain.Usuario;
+using Mediador.Domain.ValueObject;
 
 namespace Mediador.Domain.Contrato.Factory
 {
     public class ClienteFactory : IClienteFactory
     {
-        public Cliente CriarCliente(string nome, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string cep, string telefone, Email email, Password password, PlanoEnum plano, Guid usuarioId, Usuario usuario)
+        public Cliente CriarCliente(string nome, string logradouro, string numero, string complemento, string bairro,
+            string cidade, string estado, string cep, string telefone, Email email, Password password, TipoPlanoEnum plano, TipoDocumentoEnum documento, Guid userId, User user)
         {
 
             if (string.IsNullOrEmpty(nome))
@@ -39,14 +36,14 @@ namespace Mediador.Domain.Contrato.Factory
             if (password == null)
                 throw new ArgumentNullException(nameof(password));
 
-            if (usuario == null)
-                throw new ArgumentNullException(nameof(usuario));
+            if (user == null)
+                throw new ArgumentNullException(nameof(user));
 
 
             var endereco = Endereco.Create(logradouro, numero, complemento, bairro, cidade, estado, cep);
 
 
-            return new Cliente(nome, endereco, telefone, email, password, plano, usuarioId, usuario);
+            return new Cliente(nome, endereco, telefone, email, password, plano, documento, userId, user);
         }
     }
 }
