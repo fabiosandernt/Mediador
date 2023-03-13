@@ -10,9 +10,9 @@ namespace Mediador.Domain.Contrato
     public enum TipoDocumentoEnum
     {
         [Description("Pessoa Física")]
-        Fisica = 0,
+        Física = 0,
 
         [Description("Pessoa Jurídica")]
-        Juridica = 1,
+        Jurídica = 1,
     }
 }
