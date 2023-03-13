@@ -5,7 +5,7 @@ namespace Mediador.Domain.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        Task<T> GetByIdAsync(int id);
+        Task<T> GetByIdAsync(object id);
         Task<IEnumerable<T>> GetAllAsync();
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);
