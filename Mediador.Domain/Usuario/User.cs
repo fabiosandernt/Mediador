@@ -21,6 +21,8 @@ namespace Mediador.Domain.Usuario
             Password = password;
             TipoUsuario = tipoUsuario;
         }
+        //Para o EF
+        protected User() { }
 
         public void SetPassword()
         {

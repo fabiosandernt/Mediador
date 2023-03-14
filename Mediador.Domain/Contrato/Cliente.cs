@@ -16,6 +16,9 @@ namespace Mediador.Domain.Contrato
         public TipoDocumentoEnum TipoDocumento { get; set; }
         public Guid UserId { get; set; }
         public User User { get; set; }
+
+        //Para O EF
+        protected Cliente() { }
         public Cliente(string nome, Endereco endereco, string telefone, Documento documento, Email email, Password password,
             TipoPlanoEnum plano, TipoDocumentoEnum tipoDocumento, Guid userId, User user)
         {
@@ -33,8 +36,9 @@ namespace Mediador.Domain.Contrato
         }
 
         // Sobrecarga do construtor para permitir que o VO de endereço seja fornecido separadamente
-        public Cliente(string nome, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, 
-            string cep, string telefone, Documento documento, Email email, Password password, TipoPlanoEnum plano, TipoDocumentoEnum tipoDocumento, Guid userId, User user)
+        public Cliente(string nome, string logradouro, string numero, string complemento, string bairro, string cidade, Estado estado, 
+            string cep, string telefone, Documento documento, Email email, Password password,
+            TipoPlanoEnum plano, TipoDocumentoEnum tipoDocumento, Guid userId, User user)
             
             : this(nome, Endereco.Create(logradouro, numero, complemento, bairro, cidade, estado, cep), telefone, documento, email, password, plano, tipoDocumento, userId, user)
         {
