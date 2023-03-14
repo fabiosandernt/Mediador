@@ -12,7 +12,8 @@ namespace Mediador.Infrastructure.Mapping
             builder.ToTable("Cliente");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
-            builder.Property(x=>x.Nome).IsRequired();
+            builder.Property(x => x.Nome).IsRequired();
+
             builder.OwnsOne(x => x.Endereco, e =>
             {
                 e.Property(x => x.Logradouro).IsRequired().HasMaxLength(200);
@@ -31,6 +32,12 @@ namespace Mediador.Infrastructure.Mapping
             {
                 p.Property(f => f.Valor).HasColumnName("Email").IsRequired().HasMaxLength(1024);
             });
+
+            builder.OwnsOne(x => x.Email, p =>
+            {
+                p.Property(f => f.Valor).HasColumnName("Email").IsRequired().HasMaxLength(1024);
+            });
+
             builder.OwnsOne(x => x.Password, p =>
             {
                 p.Property(f => f.Valor).HasColumnName("Password").IsRequired();
@@ -41,11 +48,25 @@ namespace Mediador.Infrastructure.Mapping
                     .HasColumnType("int")
                     .HasConversion<int>();
 
-            builder.Property(x => x.Documento)
+            builder.Property(x => x.TipoDocumento)
                     .IsRequired()
                     .HasColumnName("TipoDocumento")
                     .HasColumnType("int")
                     .HasConversion<int>();
+
+            builder.Property(x => x.Documento.Valor)
+                    .HasColumnName("Documento")
+                    .HasMaxLength(14)
+                    .IsRequired();
+
+            builder.Property(x => x.Documento.IsValidCPF)
+                    .HasColumnName("IsValidCPF")
+                    .IsRequired();
+
+            builder.Property(x => x.Documento.IsValidCNPJ)
+                    .HasColumnName("IsValidCNPJ")
+                    .IsRequired();
+
 
         }
     }

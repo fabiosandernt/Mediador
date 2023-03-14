@@ -6,7 +6,7 @@ namespace Mediador.Domain.Contrato.Factory
     public class ClienteFactory : IClienteFactory
     {
         public Cliente CriarCliente(string nome, string logradouro, string numero, string complemento, string bairro,
-            string cidade, Estado estado, string cep, string telefone, Email email, Password password, TipoPlanoEnum plano, TipoDocumentoEnum documento, Guid userId, User user)
+            string cidade, Estado estado, string cep, string telefone, Documento documento, Email email, Password password, TipoPlanoEnum plano, TipoDocumentoEnum tipoDocumento, Guid userId, User user)
         {
 
             if (string.IsNullOrEmpty(nome))
@@ -33,6 +33,9 @@ namespace Mediador.Domain.Contrato.Factory
             if (email == null)
                 throw new ArgumentNullException(nameof(email));
 
+            if (email == null)
+                throw new ArgumentNullException(nameof(documento));
+
             if (password == null)
                 throw new ArgumentNullException(nameof(password));
 
@@ -41,7 +44,7 @@ namespace Mediador.Domain.Contrato.Factory
 
             var endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, estado, cep);
 
-            return new Cliente(nome, endereco, telefone, email, password, plano, documento, userId, user);
+            return new Cliente(nome, endereco, telefone, documento, email, password, plano, tipoDocumento, userId, user);
         }
     }
 }
