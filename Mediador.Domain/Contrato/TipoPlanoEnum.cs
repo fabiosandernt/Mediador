@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Mediador.Domain.Contrato
 {
     public enum TipoPlanoEnum
     {
-        Basico,
-        Premimum,
-        Vip
+        [Description("Basico")]
+        Basico = 0,
+
+        [Description("Premium")]
+        Premium = 1,
+
+        [Description("Vip")]
+        Vip = 2,
     }
 }
