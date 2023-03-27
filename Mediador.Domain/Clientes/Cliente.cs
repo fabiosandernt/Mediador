@@ -1,7 +1,7 @@
 ﻿
 using Mediador.Domain.BaseEntity;
 using Mediador.Domain.Clientes.ValueObject;
-using Mediador.Domain.Usuario;
+using Mediador.Domain.Comum;
 using Mediador.Domain.Usuario.ValueObject;
 
 namespace Mediador.Domain.Clientes
@@ -38,7 +38,7 @@ namespace Mediador.Domain.Clientes
         }
 
         // Sobrecarga do construtor para permitir que o VO de endereço seja fornecido separadamente
-        public Cliente(string nome, string logradouro, string numero, string complemento, string bairro, string cidade, Estado estado, 
+        public Cliente(string nome, string logradouro, string numero, string complemento, string bairro, string cidade, EstadoEnum estado, 
             string cep, string telefone, Documento documento, Email email, Password password,
             TipoPlanoEnum plano, TipoDocumentoEnum tipoDocumento, Guid usuarioId, Usuario.Usuario usuario)
             

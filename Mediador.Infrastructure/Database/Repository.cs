@@ -16,42 +16,52 @@ namespace Mediador.Infrastructure.Database
             this.Query = Context.Set<T>();
         }
 
-        public async Task<T> GetByIdAsync(object id)
-        {
-            return await this.Query.FindAsync(id);
-        }
-
-        public async Task<IEnumerable<T>> GetAllAsync()
-        {
-            return await this.Query.ToListAsync();
-        }
-
-        public async Task AddAsync(T entity)
-        {
-            await this.Query.AddAsync(entity);
-            await this.Context.SaveChangesAsync();
-        }
-
-        public async Task UpdateAsync(T entity)
-        {
-            await this.UpdateAsync(entity);
-            await this.Context.SaveChangesAsync();
-        }
-
-        public async Task DeleteAsync(T entity)
+        public async Task Delete(T entity)
         {
             this.Query.Remove(entity);
             await this.Context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> expression)
+        public async Task<IEnumerable<T>> FindAllByCriterio(Expression<Func<T, bool>> expression)
         {
             return await this.Query.Where(expression).ToListAsync();
         }
 
-        IQueryable<T> IRepository<T>.Query(Expression<Func<T, bool>> expression)
+        public async Task<T> FindOneByCriterio(Expression<Func<T, bool>> expression)
         {
-            return this.Context.Set<T>().Where(expression);
+            return await this.Query.FirstOrDefaultAsync(expression);
+        }
+
+        public async Task<T> Get(object id)
+        {
+            return await this.Query.FindAsync(id);
+        }
+
+        public async Task<IEnumerable<T>> GetAll()
+        {
+            return await this.Query.ToListAsync();
+        }
+
+        public async Task Save(T entity)
+        {
+            await this.Query.AddAsync(entity);
+            await this.Context.SaveChangesAsync();
+        }
+
+        public async Task Update(T entity)
+        {
+            this.Query.Update(entity);
+            await this.Context.SaveChangesAsync();
+        }
+
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
+        {
+            return await Query.AnyAsync(expression);
+        }
+
+        public async Task<T> GetbyExpressionAsync(Expression<Func<T, bool>> expression)
+        {
+            return await Query.FirstOrDefaultAsync(expression);
         }
     }
 }

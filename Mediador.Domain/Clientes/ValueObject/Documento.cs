@@ -1,11 +1,25 @@
-﻿namespace Mediador.Domain.Clientes.ValueObject
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Mediador.Domain.Clientes.ValueObject
 {
     public class Documento
     {
-        public string Valor { get; private set; }
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string Valor
+        {
+            get => _valor;
+            private set => _valor = value;
+        }
+
+        private string _valor;
+
         public bool IsValidCPF { get; private set; }
         public bool IsValidCNPJ { get; private set; }
 
+        protected Documento() { }
         public Documento(string valor)
         {
             Valor = valor;

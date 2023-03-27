@@ -1,5 +1,6 @@
 ﻿using Mediador.Domain.Clientes;
 using Mediador.Domain.Clientes.ValueObject;
+using Mediador.Domain.Comum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -24,7 +25,7 @@ namespace Mediador.Infrastructure.Mapping
                 e.Property(x => x.Estado).IsRequired().HasMaxLength(2)
                     .HasConversion(
                         v => v.ToString(),
-                        v => (Estado)Enum.Parse(typeof(Estado), v)
+                        v => (EstadoEnum)Enum.Parse(typeof(EstadoEnum), v)
                     );
                 e.Property(x => x.Cep).IsRequired().HasMaxLength(8);
             });
@@ -52,21 +53,7 @@ namespace Mediador.Infrastructure.Mapping
                     .IsRequired()
                     .HasColumnName("TipoDocumento")
                     .HasColumnType("int")
-                    .HasConversion<int>();
-
-            builder.Property(x => x.Documento.Valor)
-                    .HasColumnName("Documento")
-                    .HasMaxLength(14)
-                    .IsRequired();
-
-            builder.Property(x => x.Documento.IsValidCPF)
-                    .HasColumnName("IsValidCPF")
-                    .IsRequired();
-
-            builder.Property(x => x.Documento.IsValidCNPJ)
-                    .HasColumnName("IsValidCNPJ")
-                    .IsRequired();
-
+                    .HasConversion<int>();      
 
         }
     }

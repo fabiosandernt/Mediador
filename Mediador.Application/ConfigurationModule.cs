@@ -1,4 +1,6 @@
 ﻿using Mediador.Application.Service;
+using Mediador.Domain.JwtService;
+using Mediador.Domain.JwtService.Contracts;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -25,7 +27,7 @@ namespace Mediador.Application
 
             //services.AddScoped<AzureBlobStorage>();
 
-            //services.AddScoped<IJwtService, JwtService>();
+            services.AddScoped<IJwtService, JwtService>();
 
             services.AddHttpClient();
 

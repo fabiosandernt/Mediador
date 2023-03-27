@@ -6,6 +6,7 @@ namespace Mediador.Infrastructure.Context
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
+        
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

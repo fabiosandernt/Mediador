@@ -5,6 +5,7 @@ namespace Mediador.Application.Dtos
 {
     public class UsuarioDto
     {
+        public Guid Id { get; set; }
         public string Nome { get; set; }
         public Email Email { get; set; }
         public Password Password { get; set; }
