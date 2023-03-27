@@ -1,6 +1,6 @@
 ﻿
 
-using Mediador.Domain.Usuario;
+using Mediador.Domain.Usuarios;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

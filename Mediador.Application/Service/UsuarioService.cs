@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Mediador.Application.Dtos;
 using Mediador.Domain.JwtService.Contracts;
-using Mediador.Domain.Usuario;
-using Mediador.Domain.Usuario.Repository;
+using Mediador.Domain.Usuarios;
+using Mediador.Domain.Usuarios.Repository;
 
 namespace Mediador.Application.Service
 {

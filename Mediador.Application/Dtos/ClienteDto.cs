@@ -1,6 +1,6 @@
 ﻿using Mediador.Domain.Clientes.ValueObject;
 using Mediador.Domain.Clientes;
-using Mediador.Domain.Usuario.ValueObject;
+using Mediador.Domain.Usuarios.ValueObject;
 
 namespace Mediador.Application.Dtos
 {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Mediador.Domain.Validator;
 
-namespace Mediador.Domain.Usuario.Rules
+namespace Mediador.Domain.Usuarios.Rules
 {
     public class UsuarioValidator : AbstractValidator<Usuario>
     {

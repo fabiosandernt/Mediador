@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Mediador.Domain.Usuario
-{
+
+namespace Mediador.Domain.Usuarios 
+{ 
     public enum TipoUsuarioEnum : int
     {
         [Description("Administrador")]

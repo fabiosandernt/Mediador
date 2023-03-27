@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Mediador.Application.Dtos;
-using Mediador.Domain.Usuario;
-using Mediador.Domain.Usuario.Repository;
+using Mediador.Domain.Usuarios;
+using Mediador.Domain.Usuarios.Repository;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

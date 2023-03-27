@@ -1,5 +1,5 @@
-﻿using Mediador.Domain.Usuario;
-using Mediador.Domain.Usuario.Repository;
+﻿using Mediador.Domain.Usuarios;
+using Mediador.Domain.Usuarios.Repository;
 using Mediador.Infrastructure.Context;
 using Mediador.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;

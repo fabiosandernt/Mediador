@@ -1,5 +1,5 @@
 ﻿using Mediador.Domain.Clientes.Repository;
-using Mediador.Domain.Usuario.Repository;
+using Mediador.Domain.Usuarios.Repository;
 using Mediador.Infrastructure.Context;
 using Mediador.Infrastructure.Database;
 using Mediador.Infrastructure.Repositories;
