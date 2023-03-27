@@ -1,5 +1,4 @@
-﻿
-namespace Mediador.Domain.ValueObject
+﻿namespace Mediador.Domain.Clientes.ValueObject
 {
     public class Documento
     {

@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Mediador.Infrastructure.Mapping
 {
-    public class UserMapping : IEntityTypeConfiguration<User>
+    public class UsuarioMapping : IEntityTypeConfiguration<Usuario>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Usuario> builder)
         {
             builder.ToTable("User");
 
@@ -34,7 +34,7 @@ namespace Mediador.Infrastructure.Mapping
                     .HasColumnType("int")
                     .HasConversion<int>();
 
-            builder.HasMany(p => p.Clientes).WithOne(p => p.User);
+            builder.HasMany(p => p.Clientes).WithOne(p => p.Usuario);
         }
     }
 }

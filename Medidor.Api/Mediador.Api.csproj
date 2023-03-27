@@ -15,4 +15,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mediador.Application\Mediador.Application.csproj" />
+    <ProjectReference Include="..\Mediador.Infrastructure\Mediador.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

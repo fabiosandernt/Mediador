@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mediador.Domain.ValueObject
+namespace Mediador.Domain.Usuario.ValueObject
 {
     public class Password
     {

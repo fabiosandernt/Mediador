@@ -1,5 +1,5 @@
-﻿using Mediador.Domain.Contrato;
-using Mediador.Domain.ValueObject;
+﻿using Mediador.Domain.Clientes;
+using Mediador.Domain.Clientes.ValueObject;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

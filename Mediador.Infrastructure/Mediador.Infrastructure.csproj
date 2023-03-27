@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    
     <ProjectReference Include="..\Mediador.Domain\Mediador.Domain.csproj" />
   </ItemGroup>
+ 
 
 </Project>

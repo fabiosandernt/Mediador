@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Mediador.Domain.Contrato
+namespace Mediador.Domain.Clientes
 {
     public enum TipoDocumentoEnum
     {

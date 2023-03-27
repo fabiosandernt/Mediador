@@ -1,5 +1,4 @@
-﻿
-namespace Mediador.Domain.ValueObject
+﻿namespace Mediador.Domain.Usuario.ValueObject
 {
     public class Email
     {

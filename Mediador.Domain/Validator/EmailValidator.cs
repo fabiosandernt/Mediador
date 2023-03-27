@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Mediador.Domain.ValueObject;
+using Mediador.Domain.Usuario.ValueObject;
 using System.Text.RegularExpressions;
 
 namespace Mediador.Domain.Validator

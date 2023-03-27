@@ -7,9 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediador.Domain", "Mediador
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediador.Infrastructure", "Mediador.Infrastructure\Mediador.Infrastructure.csproj", "{47726F0B-ECF0-478D-9A44-5FCCC925530D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediador.Application", "Mediador.Application\Mediador.Application.csproj", "{CDD6166C-3126-4574-A26A-A829C9351E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediador.Application", "Mediador.Application\Mediador.Application.csproj", "{CDD6166C-3126-4574-A26A-A829C9351E1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EE2EAB98-06B8-4876-B31A-1519D69B204D} = {EE2EAB98-06B8-4876-B31A-1519D69B204D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediador.Api", "Medidor.Api\Mediador.Api.csproj", "{54123BE8-2B86-4719-BAD7-03E320A6C497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediador.Api", "Medidor.Api\Mediador.Api.csproj", "{54123BE8-2B86-4719-BAD7-03E320A6C497}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

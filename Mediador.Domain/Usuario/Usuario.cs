@@ -1,20 +1,20 @@
 ﻿using FluentValidation;
 using Mediador.Domain.BaseEntity;
-using Mediador.Domain.Contrato;
+using Mediador.Domain.Clientes;
+using Mediador.Domain.Usuario.Rules;
+using Mediador.Domain.Usuario.ValueObject;
 using Mediador.Domain.Utils;
-using Mediador.Domain.Validator;
-using Mediador.Domain.ValueObject;
 
 namespace Mediador.Domain.Usuario
 {
-    public class User: Entity<Guid>
+    public class Usuario: Entity<Guid>
     {
         public string Nome { get; private set; }
         public Email Email { get; private set; }
         public Password Password { get; private set; }
         public TipoUsuarioEnum TipoUsuario { get; private set; }
         public ICollection<Cliente> Clientes { get; set; } = new List<Cliente>();
-        public User(string nome, Email email, Password password, TipoUsuarioEnum tipoUsuario)
+        public Usuario(string nome, Email email, Password password, TipoUsuarioEnum tipoUsuario)
         {
             Nome = nome;
             Email = email;
@@ -22,7 +22,7 @@ namespace Mediador.Domain.Usuario
             TipoUsuario = tipoUsuario;
         }
         //Para o EF
-        protected User() { }
+        protected Usuario() { }
 
         public void SetPassword()
         {
