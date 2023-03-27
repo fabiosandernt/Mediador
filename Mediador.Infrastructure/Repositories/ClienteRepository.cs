@@ -19,7 +19,7 @@ namespace Mediador.Infrastructure.Repositories
 
         public async Task<IEnumerable<Cliente>> ObterTodosClientesPorDocumento(string documento)
         {
-            return await this.Query.Where(c => c.Documento.Valor == documento).ToListAsync();
+            return await this.Query.Where(c => c.Documento.Numero == documento).ToListAsync();
         }
     }
     

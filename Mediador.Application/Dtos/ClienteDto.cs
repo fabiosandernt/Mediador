@@ -10,7 +10,7 @@ namespace Mediador.Application.Dtos
         public string Nome { get; set; }
         public Endereco Endereco { get; set; }
         public string Telefone { get; set; }
-        public Documento Documento { get; set; }
+        public string Documento { get; set; }
         public Email Email { get; set; }
         public Password Password { get; set; }
         public TipoPlanoEnum Plano { get; set; }

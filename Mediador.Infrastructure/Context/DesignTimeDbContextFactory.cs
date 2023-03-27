@@ -19,8 +19,7 @@ namespace Mediador.Infrastructure.Context
                 .Build();
 
             var builder = new DbContextOptionsBuilder<DataContext>();
-            var connectionString =
-                config.GetConnectionString("MediadorApi");
+            var connectionString = config.GetConnectionString("MediadorApi");
             builder.UseSqlServer(connectionString);
             Console.WriteLine(connectionString);
             return new DataContext(builder.Options);
