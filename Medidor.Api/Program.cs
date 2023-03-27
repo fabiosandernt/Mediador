@@ -1,3 +1,6 @@
+using Mediador.Application;
+using Mediador.Infrastructure;
+
 namespace Mediador.Api
 {
     public class Program
@@ -11,7 +14,7 @@ namespace Mediador.Api
             builder.Services.AddControllers();
 
             builder.Services
-                   .RegisterApplication()
+                   .RegisterApplication(builder.Configuration)
                    .RegisterRepository(builder.Configuration.GetConnectionString("MediadorApi"));
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
