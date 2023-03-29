@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Mediador.Infrastructure.Repositories
 {
-    public class ClienteRepositor : Repository<Cliente>, IClienteRepository
+    public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
-        public ClienteRepositor(DataContext context) : base(context)
+        public ClienteRepository(DataContext context) : base(context)
         {
 
         }

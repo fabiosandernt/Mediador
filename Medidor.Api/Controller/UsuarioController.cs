@@ -29,7 +29,7 @@ namespace Mediador.Api.Controller
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var entidade = await _usuarioRepository.GetAll();
+            var entidade = await _usuarioRepository.GetAllAsync();
             return Ok(entidade);
         }
 
@@ -37,7 +37,7 @@ namespace Mediador.Api.Controller
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
-            var entidade = await _usuarioRepository.Get(id);
+            var entidade = await _usuarioRepository.GetByIdAsync(id);
             if (entidade == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace Mediador.Api.Controller
 
             var entidade = mapper.Map<Usuario>(dto);
 
-            await _usuarioRepository.Save(entidade);
+            await _usuarioRepository.AddAsync(entidade);
 
             var responseDto = mapper.Map<UsuarioDto>(entidade);
             return CreatedAtAction(nameof(Get), new { id = entidade.Id }, responseDto);
@@ -71,7 +71,7 @@ namespace Mediador.Api.Controller
                 return BadRequest();
             }
 
-            var entidade = await _usuarioRepository.Get(id);
+            var entidade = await _usuarioRepository.GetByIdAsync(id);
             if (entidade == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace Mediador.Api.Controller
 
             mapper.Map(dto, entidade);
 
-            await _usuarioRepository.Update(entidade);
+            await _usuarioRepository.UpdateAsync(entidade);
 
             return NoContent();
         }
@@ -88,13 +88,13 @@ namespace Mediador.Api.Controller
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var entidade = await _usuarioRepository.Get(id);
+            var entidade = await _usuarioRepository.GetByIdAsync(id);
             if (entidade == null)
             {
                 return NotFound();
             }
 
-            await _usuarioRepository.Delete(entidade);
+            await _usuarioRepository.RemoveAsync(entidade);
 
             return NoContent();
         }

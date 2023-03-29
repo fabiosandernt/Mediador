@@ -6,6 +6,13 @@ namespace Mediador.Domain.Empresas
 {
     public class Empresa : Entity<Guid>
     {
+        public Empresa(string razaoSocial, string cnpj, Guid clienteId, Cliente cliente)
+        {
+            RazaoSocial = razaoSocial;
+            Cnpj = cnpj;
+            ClienteId = clienteId;
+            Cliente = cliente;
+        }
 
         public string RazaoSocial { get; set; }
         public string Cnpj { get; set; }

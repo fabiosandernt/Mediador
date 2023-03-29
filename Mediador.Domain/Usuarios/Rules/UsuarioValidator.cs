@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using Mediador.Domain.Validator;
 
 namespace Mediador.Domain.Usuarios.Rules
 {

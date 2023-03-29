@@ -16,52 +16,94 @@ namespace Mediador.Infrastructure.Database
             this.Query = Context.Set<T>();
         }
 
-        public async Task Delete(T entity)
+        public async Task AddAsync(T entity)
         {
-            this.Query.Remove(entity);
-            await this.Context.SaveChangesAsync();
-        }
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
 
-        public async Task<IEnumerable<T>> FindAllByCriterio(Expression<Func<T, bool>> expression)
-        {
-            return await this.Query.Where(expression).ToListAsync();
-        }
-
-        public async Task<T> FindOneByCriterio(Expression<Func<T, bool>> expression)
-        {
-            return await this.Query.FirstOrDefaultAsync(expression);
-        }
-
-        public async Task<T> Get(object id)
-        {
-            return await this.Query.FindAsync(id);
-        }
-
-        public async Task<IEnumerable<T>> GetAll()
-        {
-            return await this.Query.ToListAsync();
-        }
-
-        public async Task Save(T entity)
-        {
             await this.Query.AddAsync(entity);
             await this.Context.SaveChangesAsync();
         }
 
-        public async Task Update(T entity)
+        public async Task RemoveAsync(T entity)
         {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+
+            this.Query.Remove(entity);
+            await this.Context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(T entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+
             this.Query.Update(entity);
             await this.Context.SaveChangesAsync();
         }
 
-        public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
+        public async Task<T> GetByIdAsync(object id)
         {
-            return await Query.AnyAsync(expression);
+            if (id == null)
+            {
+                throw new ArgumentNullException(nameof(id));
+            }
+
+            return await this.Query.FindAsync(id);
         }
 
-        public async Task<T> GetbyExpressionAsync(Expression<Func<T, bool>> expression)
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await Query.FirstOrDefaultAsync(expression);
+            return await this.Query.ToListAsync();
         }
+
+        public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
+        {
+            if (predicate == null)
+            {
+                throw new ArgumentNullException(nameof(predicate));
+            }
+
+            return await this.Query.Where(predicate).ToListAsync();
+        }
+
+        public async Task<T> FindOneAsync(Expression<Func<T, bool>> predicate)
+        {
+            if (predicate == null)
+            {
+                throw new ArgumentNullException(nameof(predicate));
+            }
+
+            return await this.Query.FirstOrDefaultAsync(predicate);
+        }
+
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            if (predicate == null)
+            {
+                throw new ArgumentNullException(nameof(predicate));
+            }
+
+            return await this.Query.AnyAsync(predicate);
+        }
+
+        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> predicate)
+        {
+            if (predicate == null)
+            {
+                throw new ArgumentNullException(nameof(predicate));
+            }
+
+            return await this.Query.SingleOrDefaultAsync(predicate);
+        }
+
+
     }
 }

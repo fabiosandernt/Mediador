@@ -22,7 +22,6 @@ namespace Mediador.Domain.Clientes
         public Plano Plano { get; private set; }
         public Guid UserId { get; private set; }
         public Usuario Usuario { get; private set; }
-
         public ICollection<Empresa> Empresas { get; set; } = new List<Empresa>();
 
         //Para O EF

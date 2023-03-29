@@ -2,7 +2,7 @@
 using Mediador.Domain.Usuarios.ValueObject;
 using System.Text.RegularExpressions;
 
-namespace Mediador.Domain.Validator
+namespace Mediador.Domain.Usuarios.Rules
 {
     public class PasswordValidator : AbstractValidator<Password>
     {

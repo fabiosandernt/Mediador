@@ -8,7 +8,7 @@ using Mediador.Domain.ValueObject;
 namespace Mediador.Domain.Clientes.Factory
 {
     public class ClienteFactory : IClienteFactory
-    {
+    {         
         public Cliente CriarCliente(string nome, string logradouro, string numero, string complemento, string bairro,
             string cidade, EstadoEnum estado, string cep, string telefone, DocumentoIdentificacao documento, Email email, Password password, Plano plano, Guid userId, Usuario user)
         {
@@ -33,6 +33,9 @@ namespace Mediador.Domain.Clientes.Factory
 
             if (string.IsNullOrEmpty(telefone))
                 throw new ArgumentException("O telefone do cliente é obrigatório.", nameof(telefone));
+
+            if (plano== null)
+                throw new ArgumentNullException(nameof(plano));
 
             if (email == null)
                 throw new ArgumentNullException(nameof(email));

@@ -5,14 +5,14 @@ namespace Mediador.Domain.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        Task Save(T entity);
-        Task Delete(T entity);
-        Task Update(T entity);
-        Task<T> Get(object id);
-        Task<IEnumerable<T>> GetAll();
-        Task<IEnumerable<T>> FindAllByCriterio(Expression<Func<T, bool>> expression);
-        Task<T> FindOneByCriterio(Expression<Func<T, bool>> expression);
-        Task<bool> AnyAsync(Expression<Func<T, bool>> expression);
-        Task<T> GetbyExpressionAsync(Expression<Func<T, bool>> expression);
+        Task AddAsync(T entity);
+        Task RemoveAsync(T entity);
+        Task UpdateAsync(T entity);
+        Task<T> GetByIdAsync(object id);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate);
+        Task<T> FindOneAsync(Expression<Func<T, bool>> predicate);
+        Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
+        Task<T> GetSingleAsync(Expression<Func<T, bool>> predicate);
     }
 }

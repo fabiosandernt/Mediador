@@ -1,6 +1,6 @@
 ﻿using Mediador.Application.Dtos;
 using Mediador.Domain.Clientes;
-using Mediador.Domain.Usuario;
+using Mediador.Domain.Usuarios;
 
 
 namespace Mediador.Application.Profile

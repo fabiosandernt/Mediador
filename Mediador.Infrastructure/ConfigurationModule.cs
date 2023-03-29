@@ -1,4 +1,5 @@
 ﻿using Mediador.Domain.Clientes.Repository;
+using Mediador.Domain.Planos.Repository;
 using Mediador.Domain.Usuarios.Repository;
 using Mediador.Infrastructure.Context;
 using Mediador.Infrastructure.Database;
@@ -19,7 +20,8 @@ namespace Mediador.Infrastructure
 
             services.AddScoped(typeof(Repository<>));
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            services.AddScoped<IClienteRepository, ClienteRepositor>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IPlanoRepository, PlanoRepository>();
 
             return services;
         }
