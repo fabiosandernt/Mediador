@@ -13,6 +13,10 @@ namespace Mediador.Application.Service
         private readonly IMapper _mapper;
         private readonly IJwtService _jwtService;
 
+        public UsuarioService()
+        {
+        }
+
         public UsuarioService(
               IUsuarioRepository usuarioRepository,
               IMapper mapper,

@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediador.Application", "Med
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mediador.Api", "Medidor.Api\Mediador.Api.csproj", "{54123BE8-2B86-4719-BAD7-03E320A6C497}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediador.Teste", "Mediador.Teste\Mediador.Teste.csproj", "{A3CBF402-0FE6-4468-8075-7E2C5AA95524}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{54123BE8-2B86-4719-BAD7-03E320A6C497}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54123BE8-2B86-4719-BAD7-03E320A6C497}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54123BE8-2B86-4719-BAD7-03E320A6C497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3CBF402-0FE6-4468-8075-7E2C5AA95524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3CBF402-0FE6-4468-8075-7E2C5AA95524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3CBF402-0FE6-4468-8075-7E2C5AA95524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3CBF402-0FE6-4468-8075-7E2C5AA95524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
