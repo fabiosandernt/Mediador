@@ -6,6 +6,11 @@ namespace Mediador.Domain.InstrumentoColetivo
     {
         public string DataInicio { get; set; }
         public string DataFim { get; set; }
+        public ConvencaoColetiva ConvencaoColetivaId { get; set; }
         public ConvencaoColetiva ConvencaoColetiva { get; set; }
+        protected Vigencia()
+        {
+
+        }
     }
 }

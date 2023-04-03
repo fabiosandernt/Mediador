@@ -23,11 +23,9 @@ namespace Mediador.Infrastructure.Mapping
                 .HasColumnName("AtivoOuInativo")
                 .IsRequired();
 
-            builder.HasMany(x => x.Clientes)
+             builder.HasMany(x => x.Clientes)
                 .WithOne(x => x.Plano)
-                .HasForeignKey(x => x.PlanoId)
-                .OnDelete(DeleteBehavior.Restrict);
-
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

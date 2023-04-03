@@ -19,9 +19,10 @@ namespace Mediador.Domain.Clientes
         public Email Email { get; private set; }
         public Password Password { get; private set; }
         public Guid PlanoId { get; private set; }
-        public Plano Plano { get; private set; }
+        public Plano Plano { get; set; }
         public Guid UserId { get; private set; }
         public Usuario Usuario { get; private set; }
+        public ICollection<Pagamento> Pagamentos { get; private set; }
         public ICollection<Empresa> Empresas { get; set; } = new List<Empresa>();
 
         //Para O EF

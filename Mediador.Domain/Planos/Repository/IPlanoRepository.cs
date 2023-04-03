@@ -4,5 +4,6 @@ namespace Mediador.Domain.Planos.Repository
 {
     public interface IPlanoRepository : IRepository<Plano>
     {
+     
     }
 }

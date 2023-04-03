@@ -11,20 +11,14 @@ namespace Mediador.Domain.Planos
             AtivoOuInativo = ativoOuInativo;
             MotivoDesativacao = motivoDesativacao;
             PagamentoRealizado = pagamentoRealizado;
-        }       
-       
+        }        
         public string Nome { get; private set; }
         public bool AtivoOuInativo { get; private set; }
         public string MotivoDesativacao { get; private set; }
         public bool PagamentoRealizado { get; private set; }
         public ICollection<Cliente> Clientes { get; set; } = new List<Cliente>();
 
-        protected Plano() { }
-
-        public Plano(string nome, bool ativoOuInativo, string motivoDesativacao, bool pagamentoRealizado, ICollection<Cliente> clientes) : this(nome, ativoOuInativo, motivoDesativacao, pagamentoRealizado)
-        {
-            Clientes = clientes;
-        }
+        protected Plano() { }       
 
         public void Ativar()
         {

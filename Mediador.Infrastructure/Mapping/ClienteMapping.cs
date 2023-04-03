@@ -2,6 +2,7 @@
 using Mediador.Domain.Comum;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Mediador.Infrastructure.Mapping
 {
@@ -55,11 +56,10 @@ namespace Mediador.Infrastructure.Mapping
             {
                 p.Property(f => f.Valor).HasColumnName("Password").IsRequired();
             });
-            builder.Property(x => x.Plano)
-                    .IsRequired()
-                    .HasColumnName("TipoPlano")
-                    .HasColumnType("int")
-                    .HasConversion<int>();     
+
+            builder.HasMany(p => p.Empresas).WithOne(p => p.Cliente);
+
+            builder.HasMany(x => x.Pagamentos).WithOne(x => x.Cliente);
 
         }
     }

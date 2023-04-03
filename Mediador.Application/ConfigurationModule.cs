@@ -24,6 +24,7 @@ namespace Mediador.Application
 
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IPlanoService, PlanoService>();
 
             //services.AddScoped<AzureBlobStorage>();
 
